@@ -1,0 +1,42 @@
+#include <iostream>
+
+using namespace std;
+
+// Task 3
+char* mystrcat(char* str1, const char* str2) {
+    char* result = str1;  
+
+   
+    while (*str1 != '\0') {
+        str1++;
+    }
+
+   
+    while (*str2 != '\0') {
+        *str1 = *str2;
+        str1++;
+        str2++;
+    }
+
+    *str1 = '\0';  
+
+    return result;
+}
+
+int main() {
+    const int bufferSize = 100;
+    char str1[bufferSize];  
+    char str2[bufferSize];  
+
+    cout << "enter first line: ";
+    cin.getline(str1, bufferSize); 
+
+    cout << "enter second line: ";
+    cin.getline(str2, bufferSize);  
+
+    mystrcat(str1, str2);
+
+    cout << "result: " << str1 << endl;
+
+   
+}
